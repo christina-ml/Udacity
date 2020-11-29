@@ -34,7 +34,7 @@ def dragon():
 
 def effectiveness(health):
     health = random.randint(0,100)
-    if health < 80:
+    if health < 101:
         print_pause("a little scratch") 
     elif health < 50:
         print_pause("Gasping for air")
@@ -42,9 +42,11 @@ def effectiveness(health):
         print_pause("Not quite finished")
     elif health < 10:
         print_pause("Death")
+    print_pause(health)
 
 
 intro() 
+health = []
 first_choices() 
 
 while True:
@@ -60,7 +62,7 @@ while True:
         print_pause("You find the weapons and tools necessary to fight off the enemies.")
         print_pause("Now you are back out onto the field.")
         break
-    elif "3" in reponse:
+    elif "3" in response:
         print_pause("You go down to the river to regain health.")
         print_pause("You gain 15 points in health.")
         print_pause("Now your health is full.")
@@ -86,7 +88,10 @@ while True:
 # for the second choice: need to have the three choices repeat, and THEN choose between 1, 2, or 3.
 # for the third choice: fix the elif "3" in  response: define the response to make progress to the game.
 
-
+# Added an empty list for health (should be at the start of your code somewhere)
+# Made health visible.  Need to fix everything inside def effectiveness(health) so that the
+# random.randint number can actually be used. health < 80 means the random number has to be 
+# less than 80 to show up...
 
 
         
